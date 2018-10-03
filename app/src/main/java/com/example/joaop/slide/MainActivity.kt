@@ -10,6 +10,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewPager: ViewPager
     private lateinit var pagerAdapter: SlideAdapter
 
+    private var rangeAtn :Boolean = false // false to local true to distant
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -20,9 +22,9 @@ class MainActivity : AppCompatActivity() {
 //
 //        viewPager.adapter = pagerAdapter
 //        viewPager.addOnPageChangeListener(onPageChangeListener)
-        chkState2.setOnClickListener { chkState.isChecked = false; chkState2.isChecked = true }
+        chkState2.setOnClickListener { chkState.isChecked = false; chkState2.isChecked = true ; rangeAtn=false}
         chkState.setOnClickListener { chkState.isChecked = true; chkState2.isChecked = false ;
-        }
+            rangeAtn= true}
 
 
     }
