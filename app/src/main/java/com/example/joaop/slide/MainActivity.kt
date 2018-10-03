@@ -3,6 +3,7 @@ package com.example.joaop.slide
 import android.os.Bundle
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,12 +14,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        viewPager = findViewById(R.id.vp)
+//        viewPager = findViewById(R.id.vp)
+//
+//        pagerAdapter = SlideAdapter(supportFragmentManager)
+//
+//        viewPager.adapter = pagerAdapter
+//        viewPager.addOnPageChangeListener(onPageChangeListener)
+        chkState2.setOnClickListener { chkState.isChecked = false; chkState2.isChecked = true }
+        chkState.setOnClickListener { chkState.isChecked = true; chkState2.isChecked = false ;
+        }
 
-        pagerAdapter = SlideAdapter(supportFragmentManager)
-
-        viewPager.adapter = pagerAdapter
-        viewPager.addOnPageChangeListener(onPageChangeListener)
 
     }
     private val onPageChangeListener = object : ViewPager.OnPageChangeListener {
